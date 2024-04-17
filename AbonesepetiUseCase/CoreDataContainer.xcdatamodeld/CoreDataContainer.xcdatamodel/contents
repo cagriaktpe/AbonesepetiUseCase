@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23D60" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CampaignEntity" representedClassName="CampaignEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="company" optional="YES" attributeType="String"/>
+        <attribute name="detail" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="gifts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GiftEntity" inverseName="compaign" inverseEntity="GiftEntity"/>
+        <relationship name="specialfeatures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SpecialFeatureEntity" inverseName="campaign" inverseEntity="SpecialFeatureEntity"/>
+    </entity>
+    <entity name="GiftEntity" representedClassName="GiftEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="detail" optional="YES" attributeType="String"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <relationship name="compaign" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CampaignEntity" inverseName="gifts" inverseEntity="CampaignEntity"/>
+    </entity>
+    <entity name="SpecialFeatureEntity" representedClassName="SpecialFeatureEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="detail" optional="YES" attributeType="String"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <relationship name="campaign" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CampaignEntity" inverseName="specialfeatures" inverseEntity="CampaignEntity"/>
+    </entity>
+</model>
