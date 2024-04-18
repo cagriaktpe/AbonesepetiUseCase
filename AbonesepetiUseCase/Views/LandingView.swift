@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LandingView: View {
+    
     var body: some View {
         TabView {
             HomeView()
@@ -29,6 +30,7 @@ struct LandingView: View {
                 }
 
             CampaignsView()
+                .background(Color.red)
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Kampanyalar")

@@ -10,6 +10,7 @@ import SwiftUI
 struct CampaignsView: View {
     
     @StateObject var vm = CampaignsViewModel()
+    @State private var selectedCampaign: CampaignModel?
     
     var body: some View {
         NavigationStack {
@@ -19,10 +20,14 @@ struct CampaignsView: View {
                         CampaignCardView(campaign: campaign)
                             .padding(.horizontal)
                             .padding(.vertical, 5)
+                            .onTapGesture {
+                                selectedCampaign = campaign
+                            }
                     }
                 }
                 
             }
+            .background(Color.gray.opacity(0.2))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -32,12 +37,22 @@ struct CampaignsView: View {
                         .fontWeight(.semibold)
                 }
             }
+            .sheet(item: $selectedCampaign) { campaign in
+                NavigationStack {
+                    CampaignDetailView(campaign: campaign)
+                        .navigationTitle("Kampanya Detayı")
+                        .navigationBarTitleDisplayMode(.inline)
+                }
+            }
         }
     }
 }
 
 #Preview {
-    NavigationStack{
-        CampaignsView()
+    TabView {
+        NavigationStack {
+            CampaignsView()
+        }
     }
+    
 }
