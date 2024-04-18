@@ -56,8 +56,5 @@ struct CampaignCardView: View {
 }
 
 #Preview {
-    ZStack {
-        Color.gray
-        CampaignCardView(campaign: CampaignModel.dummyData)
-    }
+    CampaignCardView(campaign: CampaignModel.dummyData)
 }

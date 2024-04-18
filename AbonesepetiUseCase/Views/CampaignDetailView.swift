@@ -107,9 +107,6 @@ struct CampaignDetailView: View {
 
 #Preview {
     NavigationStack {
-        ZStack {
-            Color.gray
-            CampaignDetailView(campaign: CampaignModel.dummyData)
-        }
+        CampaignDetailView(campaign: CampaignModel.dummyData)
     }
 }

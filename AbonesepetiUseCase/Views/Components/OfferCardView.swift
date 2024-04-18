@@ -107,8 +107,5 @@ struct OfferCardView: View {
 }
 
 #Preview {
-    ZStack {
-        Color.gray
-        OfferCardView(offer: CampaignModel.dummyData2)
-    }
+    OfferCardView(offer: CampaignModel.dummyData2)
 }
