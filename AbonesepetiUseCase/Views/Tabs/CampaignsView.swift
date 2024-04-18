@@ -13,36 +13,43 @@ struct CampaignsView: View {
     @State private var selectedCampaign: CampaignModel?
     
     var body: some View {
+        
         NavigationStack {
-            ScrollView {
-                VStack {
-                    ForEach(vm.campaigns) { campaign in
-                        CampaignCardView(campaign: campaign)
-                            .padding(.horizontal)
-                            .padding(.vertical, 5)
-                            .onTapGesture {
-                                selectedCampaign = campaign
-                            }
-                    }
-                }
-                
+            ZStack {
+                Color("BackgroundColor")
+                content
             }
-            .background(Color.gray.opacity(0.2))
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Üyelere Özel Kampanyalarımız")
-                        .font(.callout)
-                        .foregroundStyle(Color.accentColor)
-                        .fontWeight(.semibold)
+        }
+    }
+    
+    var content: some View {
+        ScrollView {
+            VStack {
+                ForEach(vm.campaigns) { campaign in
+                    CampaignCardView(campaign: campaign)
+                        .padding(.horizontal)
+                        .padding(.vertical, 5)
+                        .onTapGesture {
+                            selectedCampaign = campaign
+                        }
                 }
             }
-            .sheet(item: $selectedCampaign) { campaign in
-                NavigationStack {
-                    CampaignDetailView(campaign: campaign)
-                        .navigationTitle("Kampanya Detayı")
-                        .navigationBarTitleDisplayMode(.inline)
-                }
+            
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Üyelere Özel Kampanyalarımız")
+                    .font(.callout)
+                    .foregroundStyle(Color.accentColor)
+                    .fontWeight(.semibold)
+            }
+        }
+        .sheet(item: $selectedCampaign) { campaign in
+            NavigationStack {
+                CampaignDetailView(campaign: campaign)
+                    .navigationTitle("Kampanya Detayı")
+                    .navigationBarTitleDisplayMode(.inline)
             }
         }
     }

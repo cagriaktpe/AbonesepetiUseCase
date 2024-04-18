@@ -8,34 +8,42 @@
 import SwiftUI
 
 struct HomeView: View {
-        
     var body: some View {
         NavigationStack {
-            ScrollView {
-                SpecialOffersView()
+            ZStack {
+                Color("BackgroundColor")
+                content
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        print("Button Tapped")
-                    }) {
-                        Image(systemName: "bell")
-                    }
+        }
+    }
+    
+    var content: some View {
+        ScrollView {
+            SpecialOffersView()
+                .padding(.top, 10)
+        }
+        .toolbarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    print("Button Tapped")
+                }) {
+                    Image(systemName: "bell")
                 }
-                
-                ToolbarItem(placement: .principal) {
-                    Image("logoNav")
-                        .resizable()
-                        .scaledToFit()
-                        
-                }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        print("Button Tapped")
-                    }) {
-                        Image(systemName: "person.crop.circle")
-                    }
+            }
+            
+            ToolbarItem(placement: .principal) {
+                Image("logoNav")
+                    .resizable()
+                    .scaledToFit()
+                    
+            }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    print("Button Tapped")
+                }) {
+                    Image(systemName: "person.crop.circle")
                 }
             }
         }

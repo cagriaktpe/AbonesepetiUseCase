@@ -12,6 +12,13 @@ struct CampaignDetailView: View {
     let campaign: CampaignModel
 
     var body: some View {
+        ZStack {
+            Color("BackgroundColor")
+            content
+        }
+    }
+
+    var content: some View {
         ScrollView {
             VStack(alignment: .leading) {
                 title
@@ -34,7 +41,7 @@ struct CampaignDetailView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                 }
-                
+
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
                         dismiss()

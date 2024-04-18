@@ -46,5 +46,9 @@ struct LandingView: View {
 }
 
 #Preview {
-    LandingView()
+    @StateObject var vm: CampaignsViewModel = CampaignsViewModel()
+    return(
+        LandingView()
+            .environmentObject(vm)
+    )
 }
