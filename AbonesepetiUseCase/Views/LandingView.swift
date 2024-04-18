@@ -30,7 +30,6 @@ struct LandingView: View {
                 }
 
             CampaignsView()
-                .background(Color.red)
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Kampanyalar")

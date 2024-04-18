@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct SpecialOffersView: View {
-    
     @EnvironmentObject var vm: CampaignsViewModel
     @State private var selectedCampaign: CampaignModel?
-    
+
     var body: some View {
         VStack {
             Text("SANA ÖZEL TEKLİFLERİMİZ")
                 .fontWeight(.semibold)
                 .foregroundStyle(Color.accentColor)
-            
+
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(vm.campaigns) { campaign in
@@ -41,13 +40,12 @@ struct SpecialOffersView: View {
 }
 
 #Preview {
-    
     @StateObject var vm = CampaignsViewModel()
-    
-    return(
-    NavigationStack {
-        SpecialOffersView()
-            .environmentObject(vm)
-    }
+
+    return (
+        NavigationStack {
+            SpecialOffersView()
+                .environmentObject(vm)
+        }
     )
 }

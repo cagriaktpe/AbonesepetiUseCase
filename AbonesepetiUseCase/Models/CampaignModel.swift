@@ -8,7 +8,7 @@
 import Foundation
 
 struct CampaignModel: Identifiable {
-    var id: String = UUID().uuidString
+    let id: String = UUID().uuidString
     var title: String
     var company: String
     var price: Double

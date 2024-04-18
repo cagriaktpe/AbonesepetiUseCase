@@ -96,10 +96,10 @@
 		81482E002BCFEF8F00F4F3F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				813421DE2BD1670F00CFC833 /* SpecialOffersView.swift */,
-				81482DF42BCFED4F00F4F3F1 /* LandingView.swift */,
 				81482E142BD00A4000F4F3F1 /* Components */,
 				81482E132BD00A3400F4F3F1 /* Tabs */,
+				813421DE2BD1670F00CFC833 /* SpecialOffersView.swift */,
+				81482DF42BCFED4F00F4F3F1 /* LandingView.swift */,
 				813421DA2BD155F500CFC833 /* CampaignDetailView.swift */,
 			);
 			path = Views;
