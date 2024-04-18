@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CampaignsView: View {
     
-    @StateObject var vm = CampaignsViewModel()
+    @EnvironmentObject var vm: CampaignsViewModel
     @State private var selectedCampaign: CampaignModel?
     
     var body: some View {
@@ -49,10 +49,17 @@ struct CampaignsView: View {
 }
 
 #Preview {
-    TabView {
-        NavigationStack {
-            CampaignsView()
+    
+    @StateObject var vm = CampaignsViewModel()
+    
+    return (
+        TabView {
+            NavigationStack {
+                CampaignsView()
+                    .environmentObject(vm)
+            }
         }
-    }
+    )
+    
     
 }

@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+        
     var body: some View {
         NavigationStack {
             ScrollView {
-                Text("Bu sadece bir örnek sayfadır.")
+                SpecialOffersView()
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -43,5 +43,10 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    @StateObject var vm: CampaignsViewModel = CampaignsViewModel()
+    return(
+        HomeView()
+            .environmentObject(vm)
+    )
+    
 }

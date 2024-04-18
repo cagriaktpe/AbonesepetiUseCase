@@ -12,7 +12,7 @@ struct CampaignCardView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Image(campaign.image)
+            Image(campaign.cardImage)
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 5))

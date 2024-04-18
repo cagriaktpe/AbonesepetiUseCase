@@ -57,7 +57,7 @@ struct CampaignDetailView: View {
     }
 
     var image: some View {
-        Image(campaign.image)
+        Image(campaign.cardImage)
             .resizable()
             .scaledToFit()
             .padding()
