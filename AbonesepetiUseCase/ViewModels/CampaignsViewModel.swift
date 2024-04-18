@@ -18,7 +18,7 @@ class CampaignsViewModel: ObservableObject {
     func getCampaings() {
         let campaign1 = CampaignModel(
             title: "Taraftar TV Paketi + 16 Mbps Limitsiz İnternet",
-            image: "empty",
+            image: "digiturk",
             description: "İngiltere Premier Ligi, Fransa Ligue 1, Almanya Ligi içeriklerini ayrıca Spor Toto 1. Lig maçlarını izleyebileceğiniz bu pakette ulusal, haber, belgesel, çocuk, dünyadan spor, eğlence ve yaşam kanalları, 1 adet film beinmoviesstar, 1 adet dizi beIN seriescomedy kanalı ile birlikte izleyebileceksiniz.",
             gifts: [
                 GiftModel(description: "İlk 2 ay yıldız dolu paket hediye"),
@@ -33,7 +33,7 @@ class CampaignsViewModel: ObservableObject {
         
         let campaign2 = CampaignModel(
             title: "Aile Spor + 16 Mbps İnternet",
-            image: "empty",
+            image: "d-smart",
             description: "Premium Spor Kanalları, Özel Çocuk Kanalları, Seçkin Belgesel Kanalları, Uluslararası Haber Kanalları, Özel Yemek ve Müzik Kanalları",
             gifts: [
                 GiftModel(description: "İlk Ay Tüm Kanallar Hediye"),
@@ -49,7 +49,7 @@ class CampaignsViewModel: ObservableObject {
         
         let campaign3 = CampaignModel(
             title: "3'lü Bilim ve Çocuk 1 Yıllık Abonelik Paketi",
-            image: "Empty",
+            image: "444dergi",
             features: [
                 FeatureModel(description: "Bilim ve Teknik ve Bilim Çocuk dergileri her ayın 1'inde yayımlanır ve aynı gün kargoyla abonelerimize gönderilir."),
                 FeatureModel(description: "Kargodan yaşanan transfer süreci İL - İLÇE bölgelere göre 5 ila 10 günü bulabilmektedir."),

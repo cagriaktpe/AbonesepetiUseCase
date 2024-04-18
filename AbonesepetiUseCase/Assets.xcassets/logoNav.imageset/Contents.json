@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Ekran Resmi 2024-04-17 14.49.26.png",
+      "filename" : "logoNav@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "logoNav@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "logoNav@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
