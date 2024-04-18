@@ -32,18 +32,22 @@ struct OfferCardView: View {
             HStack {
                 VStack(alignment: .leading) {
                     if let specialFeatures = offer.specialFeatures {
-                        ForEach(specialFeatures) {
-                            Text($0.title)
-                                .lineLimit(1)
-                                .font(.caption)
-                                .foregroundColor(Color.accentColor)
+                        ForEach(specialFeatures) { feature in
+                            VStack(alignment: .leading) {
+                                Text(feature.title)
+                                    .lineLimit(1)
+                                    .font(.caption)
+                                    .foregroundColor(Color.accentColor)
+                                
+                                Text(feature.description)
+                                    .lineLimit(1)
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.accentColor)
+                            }
                             
-                            Text($0.description)
-                                .lineLimit(1)
-                                .font(.caption)
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.accentColor)
                         }
+                        .padding(.top, 5)
                     }
                 }
                 .background(Color(.secondarySystemBackground))
@@ -70,10 +74,11 @@ struct OfferCardView: View {
             VStack {
                 Text(offer.category)
                     .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.accentColor)
+                    .fontWeight(.bold)
                     .padding(5)
                     .padding(.horizontal, 5)
-                    .background(Color.blue)
+                    .background(Color("LightBlueColor"))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .offset(y: -10)
                 
