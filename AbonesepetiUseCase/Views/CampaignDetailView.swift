@@ -67,6 +67,7 @@ struct CampaignDetailView: View {
         Image(campaign.cardImage)
             .resizable()
             .scaledToFit()
+            .clipShape(RoundedRectangle(cornerRadius: 5))
             .padding()
             .background(Color.white)
     }
@@ -76,12 +77,15 @@ struct CampaignDetailView: View {
             .font(.footnote)
             .foregroundStyle(.secondary)
             .fontWeight(.bold)
-            .padding()
+            .padding(.horizontal)
+            .padding(.vertical, 10)
     }
 
     var details: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(campaign.description ?? "")
+            if let description = campaign.description {
+                Text(description)
+            }
 
             if let gifts = campaign.gifts {
                 ForEach(gifts) { gift in
